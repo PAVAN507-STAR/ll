@@ -9,42 +9,47 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Setup Node.js ${{ matrix.node-version }} for Client
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          # Specify the lock file for caching
+          cache-dependency-path: ./ll/client/package-lock.json
 
-    # ----- Client Steps -----
-    - name: Install client dependencies
-      working-directory: ./ll/client
-      run: npm ci
+      - name: Install Client Dependencies
+        working-directory: ./ll/client
+        run: npm ci
 
-    - name: Build client
-      working-directory: ./ll/client
-      run: npm run build --if-present
+      - name: Build Client
+        working-directory: ./ll/client
+        run: npm run build --if-present
 
-    - name: Test client
-      working-directory: ./ll/client
-      run: npm test --if-present
+      - name: Test Client
+        working-directory: ./ll/client
+        run: npm test --if-present
 
-    # ----- Server Steps -----
-    - name: Install server dependencies
-      working-directory: ./ll/server
-      run: npm ci
+      - name: Setup Node.js ${{ matrix.node-version }} for Server
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: ./ll/server/package-lock.json
 
-    - name: Build server
-      working-directory: ./ll/server
-      run: npm run build --if-present
+      - name: Install Server Dependencies
+        working-directory: ./ll/server
+        run: npm ci
 
-    - name: Test server
-      working-directory: ./ll/server
-      run: npm test --if-present
+      - name: Build Server
+        working-directory: ./ll/server
+        run: npm run build --if-present
+
+      - name: Test Server
+        working-directory: ./ll/server
+        run: npm test --if-present
