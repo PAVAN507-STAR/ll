@@ -19,9 +19,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          # Specify the lock file for caching
-          cache-dependency-path: ./ll/client/package-lock.json
 
       - name: Install Client Dependencies
         working-directory: ./client
