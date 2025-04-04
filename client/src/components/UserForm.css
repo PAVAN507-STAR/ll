@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Special+Elite&display=swap');
+
+.user-form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f4e6d4;
+  border: 2px solid #8b4513;
+  box-shadow: 3px 3px 6px rgba(139, 69, 19, 0.2);
+}
+
+.form-title {
+  font-family: 'Playfair Display', serif;
+  color: #4a3520;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.balance-info {
+  background-color: #fff5e6;
+  padding: 1.5rem;
+  border: 1px solid #8b4513;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+}
+
+.initial-balance {
+  font-size: 1.1rem;
+  color: #4a3520;
+  margin-bottom: 0.5rem;
+}
+
+.bonus-amount {
+  color: #2d5a27;
+  margin-bottom: 0.5rem;
+}
+
+.final-balance {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2d5a27;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Special Elite', cursive;
+  color: #4a3520;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #8b4513;
+  background-color: #fff5e6;
+  font-family: 'Special Elite', cursive;
+  color: #4a3520;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4a3520;
+  box-shadow: 0 0 0 2px rgba(74, 53, 32, 0.2);
+}
+
+.coupon-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.coupon-input {
+  flex: 1;
+}
+
+.validate-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #8b4513;
+  color: #f4e6d4;
+  border: none;
+  cursor: pointer;
+  font-family: 'Special Elite', cursive;
+  transition: all 0.3s ease;
+}
+
+.validate-button:hover {
+  background-color: #6b3410;
+}
+
+.coupon-message {
+  margin-top: 0.5rem;
+  font-family: 'Special Elite', cursive;
+}
+
+.coupon-message.success {
+  color: #2d5a27;
+}
+
+.coupon-message.error {
+  color: #991b1b;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8b4513;
+  color: #f4e6d4;
+  border: none;
+  cursor: pointer;
+  font-family: 'Special Elite', cursive;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #6b3410;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #991b1b;
+  background-color: #fee2e2;
+  border: 1px solid #991b1b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .user-form-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .coupon-section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .validate-button {
+    width: 100%;
+  }
+
+  .form-input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .balance-info {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-form-container {
+    margin: 0.5rem;
+    padding: 0.75rem;
+  }
+} 

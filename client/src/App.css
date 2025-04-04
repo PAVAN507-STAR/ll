@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Special+Elite&display=swap');
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Special Elite', cursive;
+  color: #4a3520;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e1f4d4;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23d4b895' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.main-content {
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+}
+
+.vintage-loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #8b4513;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-family: 'Special Elite', cursive;
+  color: #4a3520;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,98 @@
+###GET ALL BOOKS
+http://localhost:5000/api/books/
+
+
+### 
+POST http://localhost:5000/api/books/add-book
+Content-Type: application/json
+
+{
+  "title": "Arbaz",
+  "class": "10th",
+  "copies": 3,
+  "status": true,
+  "issuedCopies": 5,
+  "addedAt": "2025-03-12T10:45:00.000Z"
+}
+
+
+### Update a book
+PUT http://localhost:5000/api/books/update-book/67d1ce8c61c7bc7190153274
+Content-Type: application/json
+
+{
+  "title": "The Jungle Book1",
+  "class": "Children's Literature",
+  "copies": 5,
+  "status": true,
+  "issuedCopies": 2,
+  "addedAt": "2025-03-12T10:30:00.000Z"
+}
+
+### Delete a book
+PUT http://localhost:5000/api/books/delete-book/67d1ce8c61c7bc7190153272
+
+### Restore a Book
+PUT http://localhost:5000/api/books/restore-book/67d1ce8c61c7bc7190153272
+
+
+
+
+
+
+
+
+
+
+
+### Coupon API
+
+### Create a new coupon
+POST http://localhost:5000/api/coupons/
+Content-Type: application/json
+
+{
+  "code": "SAVE10",
+  "validFrom": "2024-03-01T00:00:00.000Z",
+  "validTo": "2024-03-31T23:59:59.999Z",
+  "usageLimit": 100,
+  "usageCount": 0,
+  "status": true,
+  "discountPercent": 10
+}
+
+### Get all coupons
+GET http://localhost:5000/api/coupons/
+
+### Get a coupon by ID
+GET http://localhost:5000/api/coupons/67d1d64f1035b9da2f74aba4
+
+### Update a coupon by ID (Merge existing data with new data)
+PUT http://localhost:5000/api/coupons/67d1d64f1035b9da2f74aba4
+Content-Type: application/json
+
+{
+  "discountPercent": 15,
+  "status": false
+}
+
+### Delete a coupon by ID
+DELETE http://localhost:5000/api/coupons/67d1d64f1035b9da2f74aba4
+
+
+
+
+### Send WhatsApp Message### Send WhatsApp Message
+POST https://graph.facebook.com/v18.0/624342390752955/messages
+Authorization: Bearer EAARAQZB6DE3IBO2EOkaZAu5HZBNSbpSTRlv7IbHDECyStgNwVqBVRpVTBppECwnhO6Iovg9QzyqAsYngoANfYkE42atfOVLY5HeGhVZCivuph9FtmguRYjmeIWRhdbSBa9Fc18ZA3SycpZB1GhqDImY3aM0uJdSWFm5a0C8JGfECPM39Cluj1OBCdoHLbnzhPc31Ors9nwdXLEWppPGcXbTZC7AMM8ZD
+Content-Type: application/json
+
+{
+  "messaging_product": "whatsapp",
+  "to": "+919010974531",
+  "type": "text",
+  "text": {
+    "body": "Hello! This is a test reminder from the WhatsApp API."
+  }
+}
+

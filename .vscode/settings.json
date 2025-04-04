@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/f27295c6-8d2b-4e4c-8816-9e57d2055d54/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/little-library",
+  "appService.deploySubpath": "."
+}
