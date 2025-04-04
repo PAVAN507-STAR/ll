@@ -36,17 +36,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: ./ll/server/package-lock.json
+
 
       - name: Install Server Dependencies
-        working-directory: ./ll/server
+        working-directory: ./server
         run: npm ci
 
       - name: Build Server
-        working-directory: ./ll/server
+        working-directory: ./server
         run: npm run build --if-present
 
       - name: Test Server
-        working-directory: ./ll/server
+        working-directory: ./server
         run: npm test --if-present
